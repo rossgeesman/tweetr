@@ -1,4 +1,4 @@
-<% if @tweets %>
+<% if @tweets && @tweets.any? %>
   <% @tweets.each do |tweet|%>
     <div class='search-results'>
       <%= render partial: 'tweet', locals: { text: tweet.text, time_stamp: tweet.created_at} %>
