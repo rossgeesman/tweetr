@@ -1,2 +1,9 @@
 <h1> <%= @welcome_message %> </h1>
 <p> <%= @current_time %> </p>
+
+
+<%= form_tag('/tweets/search', method: 'get') do %>
+  <%= label_tag(:handle, "View Tweets for:") %>
+  <%= text_field_tag :handle %>
+  <%= submit_tag("View Tweets") %>
+<% end %>
