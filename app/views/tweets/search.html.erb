@@ -1,6 +1,8 @@
 <% if @tweets %>
   <% @tweets.each do |tweet|%>
-    <%= render partial: 'tweet', locals: { text: tweet.text, time_stamp: tweet.created_at} %>
+    <div class='search-results'>
+      <%= render partial: 'tweet', locals: { text: tweet.text, time_stamp: tweet.created_at} %>
+    </div>
   <% end %>
 <% else %>
 
