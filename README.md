@@ -22,6 +22,14 @@ What I didn't use:
 #### Bootstrap (or another frontend framework)
 I debated whether I should use frontend framework or not. Even though I'm not a frontend wizard, I tend to be opinionated about UI and sometimes obsess over making the frontend look nice. Since we weren't supposed to spend too much time on this, I elected to use plain old HTML and CSS.
 
+Design Choices
+--------------
+Aside from the controllers provided by devise, the app has a WelcomeController with an index action routed to the app root. I've added the devise `authorize_user!` method to the app's ApplicationController to protect routes from access by users without accounts. Actions can be whitelisted for public access by adding `skip_before_filter` to the appropriate controller/action.
+
+The main functionality of the app is provided by the TweetsController's search action which takes a handle parameter and uses the `twitter` gem to locate the timeline for the user. I added some error handling since we're working with an external API and there are quite a few scenarios where errors could occur.
+
+I did deliberate a bit about how exactly to structure the app's routing. I initially though of recreating the Twitter web client's routing scheme where the handle is a part of the route like `twitter.com/yourhandle`. Since the tweets aren't a resource owned by this app, I decided not to go that route and instead used the handle as a regular url parameter.
+
 Setup
 -----
 
