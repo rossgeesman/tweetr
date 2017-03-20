@@ -27,7 +27,7 @@ Setup
 
 ### Local
 
-### Installation on Mac (10.10 - 10.11)
+### Installation on OSX
 #### 1. Cloning the Repository
 1. Clone the tweetr repository
 2. Open Terminal and ‘cd’ into the repository’s folder.
