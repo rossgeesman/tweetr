@@ -1,0 +1,26 @@
+.nav {
+
+  clear: both;
+  right-padding: 10px;
+  color: #FFFFFF;
+  background-color: #001f3f;
+  width: 100%;
+  display: inline-block;
+  a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+}
+
+.nav-inner {
+  max-width: 1400px;
+  padding: 10px;
+}
+.nav-left {
+  float: left;
+}
+
+.nav-right {
+  display: inline;
+  float: right;
+}

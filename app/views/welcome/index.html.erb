@@ -1,9 +1,12 @@
-<h1> <%= @welcome_message %> </h1>
-<p> <%= @current_time %> </p>
-
-
-<%= form_tag('/tweets/search', method: 'get') do %>
-  <%= label_tag(:handle, "View Tweets for:") %>
-  <%= text_field_tag :handle %>
-  <%= submit_tag("View Tweets") %>
-<% end %>
+<div class='welcome-panel'>
+  <h1> <%= @welcome_message %> </h1>
+  <% if current_user %>
+    <%= form_tag('/tweets/search', method: 'get') do %>
+      <%= label_tag(:handle, "View Tweets for:") %>
+      <%= text_field_tag :handle %>
+      <%= submit_tag("View Tweets") %>
+    <% end %>
+  <% else %>
+    <p> <%= link_to "Sign in", new_user_session_path %> to get started. </p>
+  <% end %>
+</div>
